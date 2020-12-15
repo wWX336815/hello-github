@@ -1,0 +1,82 @@
+【服务端】
+SimpDLP_EP-Upgrade-1.5.0.0.9-20190805-13.tar.gz						MD5：c862c89c535a7f2ccf6607bc05138aa7		-- 升级到最新客户端安装包
+SimpDLP_EP-Upgrade-1.5.0.0.9-20190829-15.tar.gz						MD5：352bf2187485f5753d94ccdee8f71d73		-- 支持升级包名称自定义		eg：SimpDLP_EP_NongFaHang
+SimpDLP_EP_NongFaHang-Upgrade-1.5.0.0.9-20190907-16.tar.gz			MD5：8a8c1616eca683c86e2d0978b9bcce57		-- 升级服务端SpinfoDepServer
+
+【客户端】
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190908-16.zip				MD5：9f3e1086791808fc0cb6f915727422c4
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190917-17.zip															-- 解决打印异常，适配书生阅读器
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190918-18.zip															-- 解决DepOfetCtrl导致水印，外发等功能失效的问题
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190919-19.zip				MD5：df3846a2baa402126008f7bad1b4fd18		-- 增加打印水印拓展权限
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190919-20.zip				-- 解决添加打印水印拓展权限后，打印水印不生效的问题
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190921-21.zip				MD5：b323f49cfc8ecfa725f2f832f03f02a1		-- 适配书生阅读器和pdf的加解密
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190925-22.zip				--
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190925-23.zip				-- 
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190926-24.zip				-- 增加注销功能，解决pdf打印，水印，打印水印失效；解决外发光驱失败问题
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190928-25.zip				-- 解决wps标签页水印显示混乱，书生打印水印失效问题，解决注销时DepTedUserCtrl运行错误问题
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-190929-26.zip				-- 解决书生阅读器打印监控失效，wps标签页间拷贝问题，注销再登陆office文档无法打开问题
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191009-27.zip				-- 解决多窗口打开wps文档，第二个窗口不显示水印的问题；解决打开不同类型的文档（doc/xls/ppt），拖动窗口，相互切换tab页时水印停留在之前窗口中问题
+
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191011-28.zip				
+	1.解决wps水印相关问题
+	2.权限更新时系统托盘冒泡提醒用户
+	3.解决"OA登陆或权限更新后wps崩溃"问题
+	4.适配图片加解密（支持画图程序mspaint.exe打开~gif不支持水印显示）
+	5.增加暗水印、淡水印功能（需要更新权限json，增加["wartermarkType": 0]字段）					
+	6.解决"注销客户端后，客户端图标一直显示在线"问题，修改后图标优先显示顺序：离线>注销>在线
+	7.拓展权限中只要文档id和type匹配上，以拓展权限为准，不再去检查默认权限(拓展权限中0代表没有权限)
+	8.解决"未关闭文档时，注销客户端，打开的wps崩溃"问题：注销时增加提示信息，必须保存关闭当前文档后注销。
+	9.修改屏幕水印、打印水印、外发水印，同页或同屏显示4个
+
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191014-29.zip
+	1.浏览、打印、外发水印
+	2.排除向本地硬盘拷贝操作
+	3.不具备打印权限时提醒用户“您没有该项操作权限，请至综合办公平台中申请权限!”
+	4.福熙阅读器适配
+	5.精简日志，减少冗余
+	6.DepWatchdog修改DepAgent和SpinfoScreen启动方式，改为直接启动exe
+	7.注销后状态改为"已注销"
+
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191016-30.zip
+	1.解决文档打开后可以一直打印的问题													
+	2.取消拓展权限优先的功能，拓展权限为0则以默认权限执行																						
+	3.拓展权限：~文件外发~ 
+			"file_copy_mark_num": 0,  		/* 0:外发无水印   1:有水印 外发1次 */												
+			"file_copy_decrypt_num": 1 		/* 0:不解密直接外发  1:解密外发1次 */														
+	4.重新调整客户端托盘图标和右键菜单																									
+	5.调整DepWatchDog启动方式，Agent和screen改为explore启动									
+	6.优化日志，文档水印日志不再打印
+
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191018-31.zip
+	1.解决“点击卸载窗口后，点"卸载"后窗口卡死，无法关闭”的问题
+	2.修改打印拓展权限"print_mark_num"，改为同"file_copy_mark_num"一样	已知问题：文档打开不关闭拓展权限未更新
+	3.注销后外发直接发送原文档，不再查询权限
+	4.文档外发过程中遇到异常，会直接外发原文档
+	5.屏蔽书生虚拟打印
+	
+客户端版本32是10.19周六重新出的
+
+版本33是打的新的安装包
+
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191031-35.zip
+1. 福昕，书生，adobe水印窗口移出移入屏幕混乱问题；
+2. 360看图针对手机图片水印问题；
+3. 外发转PDF模块问题修复。
+
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191031-36.zip
+修复外发转PDF问题
+
+
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191105-37.zip
+1. 解决系统注销登录后水印/打印/外发等权限失效问题；
+2. 解决删除文件所属用户访问权限后权限失效问题，删除后统一按没有权限处理。
+
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191115-41.zip
+1.office2pdf.exe优化，解决缺乏字体库导致转失败的问题
+2.解决多用户切换时水印模块会话问题
+3.json消息中水印信息改用数组存储，水印最多8行，除过必须显示的用户名和时间，数组中最多写入6条信息，否则会造成多出的信息无法显示。
+tips:office2pdf.exe暂不支持外发水印信息多行显示，数组中存储的多条信息会拼接为一行，下发json消息时请注意不要让数组中信息个数过多。
+4.打印水印和外发水印改为宋体
+
+SimpDLP_EP_NongFaHang-Windows-1.5.0.0.9-191119-42.zip
+1.打印字体改为宋体(41升级包中未修改彻底)
