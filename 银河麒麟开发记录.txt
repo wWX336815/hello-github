@@ -1,0 +1,22 @@
+GitHub账号：wWX336815/353982067@qq.com	Spinfo0123  github地址：https://github.com/wangjian85/spchecker
+E:/work  麒麟与windows的共享目录，   对应麒麟路径/mnt/hgfs/work/
+E:/work/guochan1013下存放最新的run包，麒麟项目源码等
+E:/guochangithub下存放源码，对应麒麟主机一般存放在/home/wangjiyao/guochan
+E:/guochanrun下面存放PE提供的run包与说明文档
+
+编译代码需要预安装: apt install libparted0-dev
+					apt install smartmontools
+apt 如果失败可以更新apt源：
+/etc/apt/sources.list:
+deb http://archive.kylinos.cn/kylin/KYLIN-ALL 4.0.2-desktop main restricted universe multiverse
+apt-get update
+
+这个网页(http://archive.kylinos.cn/kylin/KYLIN-ALL/)配置源的说明
+
+编译成功直接运行bin目录下start.sh即可
+
+
+
+
+E:\ESC_github 这是徐云创建的github地址最新的代码.
+E:\DEP_ESC    国产化终端保密检查工具svn地址.
